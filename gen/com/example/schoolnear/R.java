@@ -232,38 +232,38 @@ containing a value of this type.
         public static final int sms=0x7f020027;
     }
     public static final class id {
-        public static final int TableLayout1=0x7f050008;
+        public static final int TableLayout1=0x7f050005;
         public static final int action_settings=0x7f050020;
-        public static final int button1=0x7f050007;
-        public static final int button2=0x7f050009;
-        public static final int button3=0x7f05000b;
-        public static final int buttonDelete=0x7f05000f;
-        public static final int buttonSnooze=0x7f050010;
-        public static final int editText1=0x7f050006;
+        public static final int button1=0x7f05000b;
+        public static final int button2=0x7f05000c;
+        public static final int button3=0x7f050010;
+        public static final int buttonDelete=0x7f050014;
+        public static final int buttonSnooze=0x7f050015;
+        public static final int editText1=0x7f050009;
         public static final int editText2=0x7f05001b;
         public static final int hybrid=0x7f050004;
         public static final int icon=0x7f05001f;
-        public static final int label=0x7f05000d;
-        public static final int label3=0x7f05000c;
-        public static final int map=0x7f05000e;
+        public static final int label=0x7f050012;
+        public static final int label3=0x7f050011;
+        public static final int map=0x7f050013;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int rowLayout=0x7f05001e;
         public static final int satellite=0x7f050002;
-        public static final int tableRow1=0x7f050011;
-        public static final int tableRow2=0x7f050013;
-        public static final int tableRow3=0x7f050014;
-        public static final int tableRow4=0x7f050015;
-        public static final int tableRow5=0x7f050016;
+        public static final int tableRow1=0x7f050006;
+        public static final int tableRow2=0x7f050008;
+        public static final int tableRow3=0x7f05000a;
+        public static final int tableRow4=0x7f05000d;
+        public static final int tableRow5=0x7f05000f;
         public static final int tableRow6=0x7f050018;
         public static final int tableRow7=0x7f050019;
         public static final int tableRow8=0x7f05001c;
         public static final int tableRow9=0x7f05001d;
         public static final int terrain=0x7f050003;
-        public static final int textView1=0x7f050005;
-        public static final int textView2=0x7f05000a;
+        public static final int textView1=0x7f050007;
+        public static final int textView2=0x7f05000e;
         public static final int textView3=0x7f05001a;
-        public static final int textView6=0x7f050012;
+        public static final int textView6=0x7f050016;
         public static final int timePicker1=0x7f050017;
     }
     public static final class integer {
@@ -289,6 +289,8 @@ containing a value of this type.
     }
     public static final class string {
         public static final int action_settings=0x7f06001b;
+        public static final int add_details=0x7f06002a;
+        public static final int add_reminder=0x7f060021;
         public static final int app_name=0x7f06001a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -384,7 +386,20 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f060013;
+        public static final int date=0x7f06002b;
+        public static final int delete=0x7f06002e;
+        public static final int display_reminders=0x7f060027;
         public static final int hello_world=0x7f06001c;
+        public static final int large_text=0x7f060028;
+        public static final int location_based=0x7f060023;
+        public static final int medium_text=0x7f060029;
+        public static final int note=0x7f060026;
+        public static final int see_reminders=0x7f060024;
+        public static final int set_reminder=0x7f06002d;
+        public static final int show_all_reminders=0x7f060025;
+        public static final int snooze=0x7f06002f;
+        public static final int time=0x7f06002c;
+        public static final int time_based=0x7f060022;
         public static final int title_activity_add_location_based_reminder=0x7f06001d;
         public static final int title_activity_display_reminder=0x7f06001f;
         public static final int title_activity_main_list_adapter_reminders=0x7f06001e;

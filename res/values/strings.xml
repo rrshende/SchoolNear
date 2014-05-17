@@ -8,5 +8,20 @@
     <string name="title_activity_main_list_adapter_reminders">MainListAdapterReminders</string>
     <string name="title_activity_display_reminder">DisplayReminder</string>
     <string name="title_activity_show_on_map">ShowOnMap</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="time_based">Time Based</string>
+    <string name="location_based">Location Based</string>
+    <string name="see_reminders">See Reminders</string>
+    <string name="show_all_reminders">Show All Reminders</string>
+    <string name="note">Note</string>
+    <string name="display_reminders">Display Reminders</string>
+    <string name="large_text">Large Text</string>
+    <string name="medium_text">Medium Text</string>
+    <string name="add_details">Add Details</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="delete">Delete</string>
+    <string name="snooze">Snooze</string>
 
 </resources>

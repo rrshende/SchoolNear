@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/map"
         android:layout_alignTop="@+id/map"
-        android:text="Delete" />
+        android:text="@string/delete" />
 
     <Button
         android:id="@+id/buttonSnooze"
@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/map"
         android:layout_below="@+id/buttonDelete"
-        android:text="Snooze" />
+        android:text="@string/snooze" />
 
 </RelativeLayout>
