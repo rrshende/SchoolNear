@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Remind Me!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_add_location_based_reminder">AddLocationBasedReminder</string>
+    <string name="title_activity_main_list_adapter_reminders">MainListAdapterReminders</string>
+    <string name="title_activity_display_reminder">DisplayReminder</string>
+    <string name="title_activity_show_on_map">ShowOnMap</string>
+
+</resources>
