@@ -43,11 +43,11 @@
         </activity>
         <activity
             android:name="com.example.schoolnear.LocationBasedActivity"
-            android:label="List of choises" >
+            android:label="Location Based Reminders" >
         </activity>
         <activity
             android:name="com.example.schoolnear.TimeBasedActivity"
-            android:label="List of choises" >
+            android:label="Time Based Reminders" >
         </activity>
 
         <meta-data
