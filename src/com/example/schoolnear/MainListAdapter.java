@@ -30,7 +30,6 @@ public class MainListAdapter extends ArrayAdapter<String> {
 		String s = values[position];
 		if (s.startsWith("Send SMS")) {
 			imageView.setImageResource(R.drawable.sms);
-
 		} else if (s.startsWith("Call Someone")) {
 			imageView.setImageResource(R.drawable.call);
 		} else if (s.startsWith("Set Alarm")) {

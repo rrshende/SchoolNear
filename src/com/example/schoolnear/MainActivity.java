@@ -63,7 +63,7 @@ OnClickListener {
 
 			locationManager = (LocationManager) getSystemService(Service.LOCATION_SERVICE);
 			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000 * 3, 0, this);
-				//	locationManager.requestLocationUpdates(	LocationManager.NETWORK_PROVIDER, 1000 * 3, 0, this);
+			//	locationManager.requestLocationUpdates(	LocationManager.NETWORK_PROVIDER, 1000 * 3, 0, this);
 
 			Location location = locationManager
 					.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -73,8 +73,7 @@ OnClickListener {
 
 			// HIT GP
 			// hitGooglePlaces();
-			String a[] = { "grocery_or_supermarket", "bank", "atm",
-					"gas_station", "pharmacy" };
+			String a[] = { "grocery_or_supermarket", "bank", "atm","gas_station", "pharmacy" };
 
 			/*
 			 * 
@@ -194,13 +193,6 @@ OnClickListener {
 			System.out.println("CH" + latitude);
 			ArrayList<Place> findPlaces = service.findPlaces(latitude,
 					longitude, places, radius);
-			// Log.d("ROhit", "lat long is "+latitude+"	"+longitude);
-			/*
-			 * for (int i = 0; i < findPlaces.size(); i++) {
-			 * 
-			 * Place placeDetail = findPlaces.get(i); Log.e("Rohit", "places : "
-			 * + placeDetail.getName()); }
-			 */
 			return findPlaces;
 		}
 
@@ -249,13 +241,6 @@ OnClickListener {
 			System.out.println("LOCATION");
 			Intent i = new Intent(this, LocationBasedActivity.class);
 			startActivity(i);
-
-
-
-
-
-
-
 			break;
 
 		case R.id.button3:
@@ -352,7 +337,7 @@ OnClickListener {
 
 						AlertDialog r = radiusDialogBuilder.create();
 						r.show();
-*/
+						 */
 					}
 
 
@@ -397,15 +382,12 @@ OnClickListener {
 	public void getLocationFromGPS() {
 		locationManager = (LocationManager) getSystemService(Service.LOCATION_SERVICE);
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,	1000 * 60 * 3, 0, this);
-				//locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,		1000 * 60 * 3, 0, this);
+		//locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,		1000 * 60 * 3, 0, this);
 
 		Location location = locationManager
 				.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		latitude = location.getLatitude();
 		longitude = location.getLongitude();
-		System.out.println("Inside getLocationFromGPS");
-		System.out.println(latitude);
-		System.out.println(longitude);
 	}
 
 }
