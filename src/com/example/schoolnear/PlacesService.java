@@ -12,6 +12,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.android.gms.drive.internal.u;
+
 /*import android.util.Log;*/
 
 
@@ -30,16 +32,13 @@ public class PlacesService {
 			String placeSpacification, String radius) {
 
 		String urlString = makeUrl(latitude, longitude, placeSpacification, radius);
-		
+
 		try {
 			String json = getJSON(urlString);
 
 			////System.out.println(json);
 			JSONObject object = new JSONObject(json);
 			JSONArray array = object.getJSONArray("results");
-			
-			
-
 			ArrayList<Place> arrayList = new ArrayList<Place>();
 			for (int i = 0; i < array.length(); i++) {
 				try {
@@ -49,12 +48,37 @@ public class PlacesService {
 				} catch (Exception e) {
 				}
 			}
+			//
+			for(int j=0;j<2;j++){
+				String pageToken = (String) object.get("next_page_token");
+				urlString = makeUrl(pageToken);
+				object = new JSONObject(json);
+				array = object.getJSONArray("results");
+				for (int i = 0; i < array.length(); i++) {
+					try {
+						Place place = Place.jsonToPontoReferencia((JSONObject) array.get(i),placeSpacification);
+						//Log.v("Places Services ", "" + place);
+						arrayList.add(place);
+					} catch (Exception e) {
+					}
+				}
+			}
+			System.out.println("SIZE of list is now "+arrayList.size());
 			return arrayList;
 		} catch (JSONException ex) {
 			Logger.getLogger(PlacesService.class.getName()).log(Level.SEVERE,
 					null, ex);
 		}
 		return null;
+	}
+
+	private String makeUrl(String pageToken) {
+		StringBuilder urlString = new StringBuilder("https://maps.googleapis.com/maps/api/place/search/json?");
+		urlString.append("pagetoken=");
+		urlString.append(pageToken);
+		urlString.append("&sensor=false&key=");
+		urlString.append(API_KEY);
+		return urlString.toString();
 	}
 
 	// https://maps.googleapis.com/maps/api/place/search/json?location=28.632808,77.218276&radius=500&types=atm&sensor=false&key=apikey
@@ -68,16 +92,19 @@ public class PlacesService {
 			urlString.append(",");
 			urlString.append(Double.toString(longitude));
 			//urlString.append("&radius="+radius);
-			urlString.append("&radius=10000");
+			//urlString.append("&radius=10000");
+			urlString.append("&rankby=distance");
 			urlString.append("&sensor=false&key=" + API_KEY);
 			System.out.println("U"+urlString);
-		} else {
+		} 
+		else {
 			urlString.append("&location=");
 			urlString.append(Double.toString(latitude));
 			urlString.append(",");
 			urlString.append(Double.toString(longitude));
 			//urlString.append("&radius="+radius);
-			urlString.append("&radius=10000");
+			//urlString.append("&radius=10000");
+			urlString.append("&rankby=distance");
 			urlString.append("&types=" + place);
 			urlString.append("&sensor=false&key=" + API_KEY);
 			System.out.println("U"+urlString);
