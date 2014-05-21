@@ -25,11 +25,11 @@ public class NotificationService extends IntentService {
 
 
 		// int s = intent.getExtras().getInt("id");
-		System.out.println("notificationnnnnnn " + s);
+		//System.out.println("notificationnnnnnn " + s);
 		String sArray[] = s.split(":");
 		if(sArray.length>2){
 			//call maps to display
-			System.out.println("SHOW ON MAP");
+			//System.out.println("SHOW ON MAP");
 			Intent myIntent = new Intent(this, ShowOnMap.class);
 			myIntent.setData(Uri.parse(s));
 			PendingIntent contentIntent = PendingIntent.getActivity(this, 0,myIntent, 0);
@@ -41,11 +41,11 @@ public class NotificationService extends IntentService {
 			//display remonder
 			//sArray = sArray[1].split("~");
 			String q[] = sArray[1].split("~");
-			System.out.println("0 "+q[0]);
-			System.out.println("1 "+q[1]);
-			System.out.println("TIME BASED "+sArray[0]);
+			//System.out.println("0 "+q[0]);
+			//System.out.println("1 "+q[1]);
+			//System.out.println("TIME BASED "+sArray[0]);
 			if (q[0].trim().equalsIgnoreCase("Send SMS")) {
-				System.out.println("INSIDE sms");
+				//System.out.println("INSIDE sms");
 				/*  Intent smsIntent = new Intent(Intent.ACTION_SEND);
 					 smsIntent.addCategory(Intent.CATEGORY_DEFAULT);
 					 smsIntent.setType("vnd.android-dir/mms-sms"); 
@@ -75,7 +75,7 @@ public class NotificationService extends IntentService {
 				mNM.notify(2, notification);
 
 			} else if (q[0].trim().equalsIgnoreCase("Call Someone")) {
-				System.out.println("inside  call");
+				//System.out.println("inside  call");
 				/* Intent Eintent= new Intent(Intent.ACTION_PICK,  Contacts.CONTENT_URI);
 				 Eintent.addCategory(Intent.CATEGORY_DEFAULT);
 				 Eintent.setType("vnd.android-dir/mms-sms"); 

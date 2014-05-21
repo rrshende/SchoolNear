@@ -47,12 +47,12 @@ public class ShowOnMap extends Activity implements LocationListener,OnClickListe
 		delete.setOnClickListener(this);
 		snooze.setOnClickListener(this);
 		String received  = getIntent().getDataString();
-		System.out.println("received "+received);
+		//System.out.println("received "+received);
 		array = received.split(":");
 
 		for(int i=2;i<array.length;i++){
 			int pid = Integer.parseInt(array[i]);
-			String select = "SELECT * FROM Place1 where id="+pid;
+			String select = "SELECT * FROM Places where id="+pid;
 			Cursor c = database.rawQuery(select, new String[0]);
 			if(c.moveToFirst()){
 				double lLatitude = c.getDouble(1);
@@ -69,7 +69,7 @@ public class ShowOnMap extends Activity implements LocationListener,OnClickListe
 	}
 
 	/*private void removeReminder() {
-		System.out.println("INSIDE");
+		//System.out.println("INSIDE");
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 		alertDialogBuilder.setTitle("Snooze or Dismiss?");
 		alertDialogBuilder.setCancelable(false).setPositiveButton("Snooze", new DialogInterface.OnClickListener(){
@@ -119,7 +119,7 @@ public class ShowOnMap extends Activity implements LocationListener,OnClickListe
 
 	@Override
 	protected void onStop() {
-		System.out.println("on Stop");
+		//System.out.println("on Stop");
 		super.onStop();
 	}
 
@@ -134,7 +134,7 @@ public class ShowOnMap extends Activity implements LocationListener,OnClickListe
 	}
 	@Override
 	protected void onPause() {
-		System.out.println("on pause");
+		//System.out.println("on pause");
 	super.onPause();
 	}
 

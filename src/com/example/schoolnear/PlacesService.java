@@ -36,7 +36,7 @@ public class PlacesService {
 		try {
 			String json = getJSON(urlString);
 
-			////System.out.println(json);
+			//////System.out.println(json);
 			JSONObject object = new JSONObject(json);
 			JSONArray array = object.getJSONArray("results");
 			ArrayList<Place> arrayList = new ArrayList<Place>();
@@ -63,7 +63,7 @@ public class PlacesService {
 					}
 				}
 			}
-			System.out.println("SIZE of list is now "+arrayList.size());
+			//System.out.println("SIZE of list is now "+arrayList.size());
 			return arrayList;
 		} catch (JSONException ex) {
 			Logger.getLogger(PlacesService.class.getName()).log(Level.SEVERE,
@@ -83,7 +83,7 @@ public class PlacesService {
 
 	// https://maps.googleapis.com/maps/api/place/search/json?location=28.632808,77.218276&radius=500&types=atm&sensor=false&key=apikey
 	private String makeUrl(double latitude, double longitude, String place,String radius) {
-		System.out.println("INSIDE PLACE SERVICE"+radius);
+		//System.out.println("INSIDE PLACE SERVICE"+radius);
 		StringBuilder urlString = new StringBuilder(
 				"https://maps.googleapis.com/maps/api/place/search/json?");
 		if (place.equals("")) {
@@ -95,7 +95,7 @@ public class PlacesService {
 			//urlString.append("&radius=10000");
 			urlString.append("&rankby=distance");
 			urlString.append("&sensor=false&key=" + API_KEY);
-			System.out.println("U"+urlString);
+			//System.out.println("U"+urlString);
 		} 
 		else {
 			urlString.append("&location=");
@@ -107,9 +107,9 @@ public class PlacesService {
 			urlString.append("&rankby=distance");
 			urlString.append("&types=" + place);
 			urlString.append("&sensor=false&key=" + API_KEY);
-			System.out.println("U"+urlString);
+			//System.out.println("U"+urlString);
 		}
-		//System.out.println(urlString);
+		////System.out.println(urlString);
 
 		return urlString.toString();
 	}
@@ -134,8 +134,8 @@ public class PlacesService {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		//System.out.println("From GP");
-		//System.out.println("GP "+content);
+		////System.out.println("From GP");
+		////System.out.println("GP "+content);
 		return content.toString();
 	}
 }

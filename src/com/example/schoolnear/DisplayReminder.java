@@ -32,7 +32,7 @@ android.view.View.OnClickListener {
 
 		String id = getIntent().getDataString();
 		String s[] = id.split(":");
-		System.out.println("ID: " + s[0]);
+		//System.out.println("ID: " + s[0]);
 		database = openOrCreateDatabase("mySqliteDatabase.db",
 				SQLiteDatabase.CREATE_IF_NECESSARY, null);
 		String select = "SELECT * FROM reminders WHERE id ="
@@ -43,7 +43,7 @@ android.view.View.OnClickListener {
 			time = c.getString(1);
 			category = c.getString(3);
 			message = c.getString(2);
-			System.out.println("From Notificatpion categoty is " + category);
+			//System.out.println("From Notificatpion categoty is " + category);
 			t.setText(category);
 		}
 
@@ -51,19 +51,9 @@ android.view.View.OnClickListener {
 		String where = "id = ?";
 		String[] whereArgs = { s[0] };
 		database.delete(table_name, where, whereArgs);
-		System.out.println("after deleete queryyyyyyyyyy");
+		//System.out.println("after deleete queryyyyyyyyyy");
 		t.setText("Reminder - " + time + " " + message + " " + category
 				+ " deleted");
-
-		/*
-		 * String select = "SELECT * FROM reminders "; Cursor c =
-		 * database.rawQuery(select, new String[0]);
-		 * 
-		 * while(c.moveToNext()){ String category = c.getString(3); String
-		 * message = c.getString(2);
-		 * System.out.println("From Notificatpion categoty is "+category);
-		 * //t.setText(category); }
-		 */
 
 	}
 

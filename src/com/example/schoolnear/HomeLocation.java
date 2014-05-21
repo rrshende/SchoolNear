@@ -51,10 +51,10 @@ public class HomeLocation extends AsyncTask<Void, Void, Void>{
 				stringBuilder.append((char) b);
 			}
 		} catch (ClientProtocolException e) {
-			System.out.println("ClientProtocolException"+e.getMessage());
+			//System.out.println("ClientProtocolException"+e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("IOException"+e.getMessage());
+			//System.out.println("IOException"+e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -70,10 +70,10 @@ public class HomeLocation extends AsyncTask<Void, Void, Void>{
 					.getJSONObject("geometry").getJSONObject("location")
 					.getDouble("lat");
 
-			System.out.println("from "+lat);
-			System.out.println("from "+lng);
+			//System.out.println("from "+lat);
+			//System.out.println("from "+lng);
 		} catch (JSONException e) {
-			System.out.println("IOException"+e.getMessage());
+			//System.out.println("IOException"+e.getMessage());
 			e.printStackTrace();
 		}
 		return null;
@@ -82,7 +82,7 @@ public class HomeLocation extends AsyncTask<Void, Void, Void>{
 
 	public void getLoc(){
 		try {
-			System.out.println("Inside get loc");
+			//System.out.println("Inside get loc");
 			//String uri = "http://maps.google.com/maps/api/geocode/json?address=" +
 					//youraddress + "&sensor=false";
 			String uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" +
@@ -99,16 +99,16 @@ public class HomeLocation extends AsyncTask<Void, Void, Void>{
 				stringBuilder.append((char) b);
 			}
 		} catch (ClientProtocolException e) {
-			System.out.println("ClientProtocolException"+e.getMessage());
+			//System.out.println("ClientProtocolException"+e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("IOException"+e.getMessage());
+			//System.out.println("IOException"+e.getMessage());
 			e.printStackTrace();
 		}
 
 		JSONObject jsonObject = new JSONObject();
 		try {
-			System.out.println("rohit1");
+			//System.out.println("rohit1");
 			jsonObject = new JSONObject(stringBuilder.toString());
 
 			lng = ((JSONArray)jsonObject.get("results")).getJSONObject(0)
@@ -119,10 +119,10 @@ public class HomeLocation extends AsyncTask<Void, Void, Void>{
 					.getJSONObject("geometry").getJSONObject("location")
 					.getDouble("lat");
 
-			System.out.println("from "+lat);
-			System.out.println("from "+lng);
+			//System.out.println("from "+lat);
+			//System.out.println("from "+lng);
 		} catch (JSONException e) {
-			System.out.println("IOException"+e.getMessage());
+			//System.out.println("IOException"+e.getMessage());
 			e.printStackTrace();
 		}
 		//return null;

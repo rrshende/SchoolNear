@@ -18,13 +18,13 @@ public class Utility {
 		try {
 			list = gc.getFromLocationName(locationName, 1);
 			Address home = list.get(0);
-			System.out.println("inside geocoder");
-			System.out.println("rohit "+home.getLatitude());
-			System.out.println("rohit "+home.getLongitude());
+			//System.out.println("inside geocoder");
+			//System.out.println("rohit "+home.getLatitude());
+			//System.out.println("rohit "+home.getLongitude());
 			lat = home.getLatitude();
 			lng = home.getLongitude();
 		} catch (IOException e) {
-			System.out.println("Exception in Geocoder");
+			//System.out.println("Exception in Geocoder");
 		//	Toast.makeText(null, "Enter valid address", Toast.LENGTH_SHORT).show();
 			e.printStackTrace();
 		}

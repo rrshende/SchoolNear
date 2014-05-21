@@ -17,12 +17,11 @@ public class ShowReminders extends ListActivity{
 			String select= "SELECT * FROM reminders";
 			Cursor c = database.rawQuery(select, new String[0]);
 			int count=c.getCount();
-			System.out.println("counttt" + count);
 			String[] values = new String[count];
 			count = 0;
 			while(c.moveToNext()){
 				values[count] = ""+ c.getString(1) + "~" + c.getString(2)+ "~" + c.getString(3);
-				System.out.println(values[count]);
+				//System.out.println(values[count]);
 				count++;
 			}
 			database.close();
@@ -39,7 +38,6 @@ public class ShowReminders extends ListActivity{
 		super.finish();
 
 		Intent intent = new Intent(this, MainActivity.class);
-		//intent.putExtra("EXIT", true);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		startActivity(intent);
 	}
